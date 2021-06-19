@@ -2,15 +2,16 @@ import React from 'react';
 import classes from './HeaderButton.module.css';
 import CartIcon from '../Cart/CartButton';
 
-function Button()
+function Button( props)
 {
-return <div className={classes.button}>
-    <span className={classes.icon}>
+    
+return <button className={classes.button} onClick={props.onClick}>
+<span className={classes.icon}>
 <CartIcon />
-    </span>
-    <span>Your Cart</span>
-    <span className={classes.badge}>3</span>
-</div>
+</span>
+<span>Your Cart</span>
+<span className={classes.badge}>3</span>
+</button>
 
 }
 export default Button;
