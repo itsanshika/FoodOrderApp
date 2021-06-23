@@ -3,7 +3,7 @@ import React,{Fragment} from 'react';
 import HeaderButton from './HeaderButton';
 import imgHeader from '../../assets/imgHeader.jpg';
 import classes from './Header.module.css';
-import Cart from '../Cart/Cart';
+
 
 function Header(props)
 {
