@@ -8,40 +8,27 @@ function Cart(props) {
   const cartCtx = useContext(CartContext);
 
   function addOnHandler(item) {
-   const itemAdd={
-     ...item,
-     amount: 1
-   };
+    const itemAdd = {
+      ...item,
+      amount: 1,
+    };
 
-cartCtx.addItem(itemAdd);
-
-
+    cartCtx.addItem(itemAdd);
   }
 
   function removeOnHandler(id) {
-  
+    const itemIndex = cartCtx.items.findIndex((item) => item.id === id);
 
-   const itemIndex= cartCtx.items.findIndex((item)=> item.id===id);
-   
-  const existingItem= cartCtx.items[itemIndex];
-  if(existingItem.amount>1)
-  {
-  const updateItem=
-  {
-    ...existingItem,
-    amount:-1,
-
-
-  };
-  cartCtx.addItem(updateItem);
-}
-else{
-  cartCtx.removeItem(id);
-}
-
-
-  
- 
+    const existingItem = cartCtx.items[itemIndex];
+    if (existingItem.amount > 1) {
+      const updateItem = {
+        ...existingItem,
+        amount: -1,
+      };
+      cartCtx.addItem(updateItem);
+    } else {
+      cartCtx.removeItem(id);
+    }
   }
 
   const cartItems = (
